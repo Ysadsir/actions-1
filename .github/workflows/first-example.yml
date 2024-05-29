@@ -9,11 +9,14 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Welcome message
-      run: echo "Hello Guuyyys !!"
+    - name: List and Read file
+      run: |
+        echo "Hello Guuyyys !!"
+        ls -la
+        cat README.md
 
-    - name: List files
-      run: ls
-      
-    - name: Read file
-      run: cat README.md
+#    - name: List files
+#      run: ls
+
+#    - name: Read file
+#      run: cat README.md
