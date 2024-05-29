@@ -6,6 +6,9 @@ jobs:
   build_job:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
     - name: Execute ASCII artwork
       run: |
         chmod +x ascii-script.sh
