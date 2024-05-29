@@ -1,0 +1,36 @@
+name: My Multi-jobs Workflow
+
+on: push
+
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Execute ASCII artwork
+      run: |
+        chmod +x ascii-script.sh
+        ./ascii-script.sh
+
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Test dragon file
+      run: grep -i "dragon" dragon.txt
+
+  deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Test
+      run: cat dragon.txt
+
+    - name: Deploying
+      run: echo "Deploying ... .. ."
