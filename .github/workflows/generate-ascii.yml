@@ -1,6 +1,8 @@
 name: Generate ASCII file
 
-on: push
+on: 
+  push:
+  workflow_dispatch: 
 
 jobs:
   ascii_job:
